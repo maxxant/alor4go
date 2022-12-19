@@ -1,5 +1,7 @@
 # Unofficial Golang package for ALOR OpenAPI V2
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/maxxant/alor4go.svg)](https://pkg.go.dev/github.com/maxxant/alor4go)
+
 ## использование
 
 документация разработчика https://alor.dev/docs
