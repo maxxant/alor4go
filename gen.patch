@@ -1,0 +1,245 @@
+diff --git a/alor4go.gen.go b/alor4go.gen.go
+index f6f7e89..a220e37 100644
+--- a/alor4go.gen.go
++++ b/alor4go.gen.go
+@@ -2605,12 +2605,6 @@ type CommandAPIv2clientordersactionsstopLimitStopOrderIdParams struct {
+ // v2clientordersactionsestimateallJSONBody defines parameters for V2clientordersactionsestimateall.
+ type v2clientordersactionsestimateallJSONBody = []EstimateOrderViewModel
+ 
+-// v2clientordersactionsestimateallJSONBody defines parameters for V2clientordersactionsestimateall.
+-type v2clientordersactionsestimateallJSONBody = []EstimateOrderViewModel
+-
+-// v2clientordersactionsestimateallJSONBody defines parameters for V2clientordersactionsestimateall.
+-type v2clientordersactionsestimateallJSONBody = []EstimateOrderViewModel
+-
+ // CommandAPIv2clientordersdeleteParams defines parameters for CommandAPIv2clientordersdelete.
+ type CommandAPIv2clientordersdeleteParams struct {
+ 	// Portfolio Идентификатор клиентского портфеля
+@@ -3124,21 +3118,9 @@ type CommandAPIv2clientordersactionsstopLimitStopOrderIdJSONRequestBody = Bodyre
+ // V2clientordersactionsestimateJSONRequestBody defines body for V2clientordersactionsestimate for application/*+json ContentType.
+ type V2clientordersactionsestimateJSONRequestBody = EstimateOrderViewModel
+ 
+-// V2clientordersactionsestimateJSONRequestBody defines body for V2clientordersactionsestimate for application/json ContentType.
+-type V2clientordersactionsestimateJSONRequestBody = EstimateOrderViewModel
+-
+-// V2clientordersactionsestimateJSONRequestBody defines body for V2clientordersactionsestimate for application/json-patch+json ContentType.
+-type V2clientordersactionsestimateJSONRequestBody = EstimateOrderViewModel
+-
+ // V2clientordersactionsestimateallJSONRequestBody defines body for V2clientordersactionsestimateall for application/*+json ContentType.
+ type V2clientordersactionsestimateallJSONRequestBody = v2clientordersactionsestimateallJSONBody
+ 
+-// V2clientordersactionsestimateallJSONRequestBody defines body for V2clientordersactionsestimateall for application/json ContentType.
+-type V2clientordersactionsestimateallJSONRequestBody = v2clientordersactionsestimateallJSONBody
+-
+-// V2clientordersactionsestimateallJSONRequestBody defines body for V2clientordersactionsestimateall for application/json-patch+json ContentType.
+-type V2clientordersactionsestimateallJSONRequestBody = v2clientordersactionsestimateallJSONBody
+-
+ // V2clientordersactionsstopLossJSONRequestBody defines body for V2clientordersactionsstopLoss for application/json ContentType.
+ type V2clientordersactionsstopLossJSONRequestBody = BodyrequestOrdersActionsStop
+ 
+@@ -3321,19 +3303,11 @@ type ClientInterface interface {
+ 
+ 	V2clientordersactionsestimate(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+ 
+-	V2clientordersactionsestimate(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+-
+-	V2clientordersactionsestimate(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+-
+ 	// V2clientordersactionsestimateall request with any body
+ 	V2clientordersactionsestimateallWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+ 
+ 	V2clientordersactionsestimateall(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+ 
+-	V2clientordersactionsestimateall(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+-
+-	V2clientordersactionsestimateall(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+-
+ 	// CommandAPIv2clientordersdelete request
+ 	CommandAPIv2clientordersdelete(ctx context.Context, orderId int, params *CommandAPIv2clientordersdeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+ 
+@@ -3730,30 +3704,6 @@ func (c *Client) V2clientordersactionsestimate(ctx context.Context, body V2clien
+ 	return c.Client.Do(req)
+ }
+ 
+-func (c *Client) V2clientordersactionsestimate(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+-	req, err := NewV2clientordersactionsestimateRequest(c.Server, body)
+-	if err != nil {
+-		return nil, err
+-	}
+-	req = req.WithContext(ctx)
+-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+-		return nil, err
+-	}
+-	return c.Client.Do(req)
+-}
+-
+-func (c *Client) V2clientordersactionsestimate(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+-	req, err := NewV2clientordersactionsestimateRequest(c.Server, body)
+-	if err != nil {
+-		return nil, err
+-	}
+-	req = req.WithContext(ctx)
+-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+-		return nil, err
+-	}
+-	return c.Client.Do(req)
+-}
+-
+ func (c *Client) V2clientordersactionsestimateallWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+ 	req, err := NewV2clientordersactionsestimateallRequestWithBody(c.Server, contentType, body)
+ 	if err != nil {
+@@ -3778,30 +3728,6 @@ func (c *Client) V2clientordersactionsestimateall(ctx context.Context, body V2cl
+ 	return c.Client.Do(req)
+ }
+ 
+-func (c *Client) V2clientordersactionsestimateall(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+-	req, err := NewV2clientordersactionsestimateallRequest(c.Server, body)
+-	if err != nil {
+-		return nil, err
+-	}
+-	req = req.WithContext(ctx)
+-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+-		return nil, err
+-	}
+-	return c.Client.Do(req)
+-}
+-
+-func (c *Client) V2clientordersactionsestimateall(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+-	req, err := NewV2clientordersactionsestimateallRequest(c.Server, body)
+-	if err != nil {
+-		return nil, err
+-	}
+-	req = req.WithContext(ctx)
+-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+-		return nil, err
+-	}
+-	return c.Client.Do(req)
+-}
+-
+ func (c *Client) CommandAPIv2clientordersdelete(ctx context.Context, orderId int, params *CommandAPIv2clientordersdeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+ 	req, err := NewCommandAPIv2clientordersdeleteRequest(c.Server, orderId, params)
+ 	if err != nil {
+@@ -5063,28 +4989,6 @@ func NewV2clientordersactionsestimateRequest(server string, body V2clientordersa
+ 	return NewV2clientordersactionsestimateRequestWithBody(server, "application/*+json", bodyReader)
+ }
+ 
+-// NewV2clientordersactionsestimateRequest calls the generic V2clientordersactionsestimate builder with application/json body
+-func NewV2clientordersactionsestimateRequest(server string, body V2clientordersactionsestimateJSONRequestBody) (*http.Request, error) {
+-	var bodyReader io.Reader
+-	buf, err := json.Marshal(body)
+-	if err != nil {
+-		return nil, err
+-	}
+-	bodyReader = bytes.NewReader(buf)
+-	return NewV2clientordersactionsestimateRequestWithBody(server, "application/json", bodyReader)
+-}
+-
+-// NewV2clientordersactionsestimateRequest calls the generic V2clientordersactionsestimate builder with application/json-patch+json body
+-func NewV2clientordersactionsestimateRequest(server string, body V2clientordersactionsestimateJSONRequestBody) (*http.Request, error) {
+-	var bodyReader io.Reader
+-	buf, err := json.Marshal(body)
+-	if err != nil {
+-		return nil, err
+-	}
+-	bodyReader = bytes.NewReader(buf)
+-	return NewV2clientordersactionsestimateRequestWithBody(server, "application/json-patch+json", bodyReader)
+-}
+-
+ // NewV2clientordersactionsestimateRequestWithBody generates requests for V2clientordersactionsestimate with any type of body
+ func NewV2clientordersactionsestimateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+ 	var err error
+@@ -5125,28 +5029,6 @@ func NewV2clientordersactionsestimateallRequest(server string, body V2clientorde
+ 	return NewV2clientordersactionsestimateallRequestWithBody(server, "application/*+json", bodyReader)
+ }
+ 
+-// NewV2clientordersactionsestimateallRequest calls the generic V2clientordersactionsestimateall builder with application/json body
+-func NewV2clientordersactionsestimateallRequest(server string, body V2clientordersactionsestimateallJSONRequestBody) (*http.Request, error) {
+-	var bodyReader io.Reader
+-	buf, err := json.Marshal(body)
+-	if err != nil {
+-		return nil, err
+-	}
+-	bodyReader = bytes.NewReader(buf)
+-	return NewV2clientordersactionsestimateallRequestWithBody(server, "application/json", bodyReader)
+-}
+-
+-// NewV2clientordersactionsestimateallRequest calls the generic V2clientordersactionsestimateall builder with application/json-patch+json body
+-func NewV2clientordersactionsestimateallRequest(server string, body V2clientordersactionsestimateallJSONRequestBody) (*http.Request, error) {
+-	var bodyReader io.Reader
+-	buf, err := json.Marshal(body)
+-	if err != nil {
+-		return nil, err
+-	}
+-	bodyReader = bytes.NewReader(buf)
+-	return NewV2clientordersactionsestimateallRequestWithBody(server, "application/json-patch+json", bodyReader)
+-}
+-
+ // NewV2clientordersactionsestimateallRequestWithBody generates requests for V2clientordersactionsestimateall with any type of body
+ func NewV2clientordersactionsestimateallRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+ 	var err error
+@@ -8433,19 +8315,11 @@ type ClientWithResponsesInterface interface {
+ 
+ 	V2clientordersactionsestimateWithResponse(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateResponse, error)
+ 
+-	V2clientordersactionsestimateWithResponse(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateResponse, error)
+-
+-	V2clientordersactionsestimateWithResponse(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateResponse, error)
+-
+ 	// V2clientordersactionsestimateall request with any body
+ 	V2clientordersactionsestimateallWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateallResponse, error)
+ 
+ 	V2clientordersactionsestimateallWithResponse(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateallResponse, error)
+ 
+-	V2clientordersactionsestimateallWithResponse(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateallResponse, error)
+-
+-	V2clientordersactionsestimateallWithResponse(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateallResponse, error)
+-
+ 	// CommandAPIv2clientordersdelete request
+ 	CommandAPIv2clientordersdeleteWithResponse(ctx context.Context, orderId int, params *CommandAPIv2clientordersdeleteParams, reqEditors ...RequestEditorFn) (*CommandAPIv2clientordersdeleteResponse, error)
+ 
+@@ -10116,22 +9990,6 @@ func (c *ClientWithResponses) V2clientordersactionsestimateWithResponse(ctx cont
+ 	return ParseV2clientordersactionsestimateResponse(rsp)
+ }
+ 
+-func (c *ClientWithResponses) V2clientordersactionsestimateWithResponse(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateResponse, error) {
+-	rsp, err := c.V2clientordersactionsestimate(ctx, body, reqEditors...)
+-	if err != nil {
+-		return nil, err
+-	}
+-	return ParseV2clientordersactionsestimateResponse(rsp)
+-}
+-
+-func (c *ClientWithResponses) V2clientordersactionsestimateWithResponse(ctx context.Context, body V2clientordersactionsestimateJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateResponse, error) {
+-	rsp, err := c.V2clientordersactionsestimate(ctx, body, reqEditors...)
+-	if err != nil {
+-		return nil, err
+-	}
+-	return ParseV2clientordersactionsestimateResponse(rsp)
+-}
+-
+ // V2clientordersactionsestimateallWithBodyWithResponse request with arbitrary body returning *V2clientordersactionsestimateallResponse
+ func (c *ClientWithResponses) V2clientordersactionsestimateallWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateallResponse, error) {
+ 	rsp, err := c.V2clientordersactionsestimateallWithBody(ctx, contentType, body, reqEditors...)
+@@ -10149,22 +10007,6 @@ func (c *ClientWithResponses) V2clientordersactionsestimateallWithResponse(ctx c
+ 	return ParseV2clientordersactionsestimateallResponse(rsp)
+ }
+ 
+-func (c *ClientWithResponses) V2clientordersactionsestimateallWithResponse(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateallResponse, error) {
+-	rsp, err := c.V2clientordersactionsestimateall(ctx, body, reqEditors...)
+-	if err != nil {
+-		return nil, err
+-	}
+-	return ParseV2clientordersactionsestimateallResponse(rsp)
+-}
+-
+-func (c *ClientWithResponses) V2clientordersactionsestimateallWithResponse(ctx context.Context, body V2clientordersactionsestimateallJSONRequestBody, reqEditors ...RequestEditorFn) (*V2clientordersactionsestimateallResponse, error) {
+-	rsp, err := c.V2clientordersactionsestimateall(ctx, body, reqEditors...)
+-	if err != nil {
+-		return nil, err
+-	}
+-	return ParseV2clientordersactionsestimateallResponse(rsp)
+-}
+-
+ // CommandAPIv2clientordersdeleteWithResponse request returning *CommandAPIv2clientordersdeleteResponse
+ func (c *ClientWithResponses) CommandAPIv2clientordersdeleteWithResponse(ctx context.Context, orderId int, params *CommandAPIv2clientordersdeleteParams, reqEditors ...RequestEditorFn) (*CommandAPIv2clientordersdeleteResponse, error) {
+ 	rsp, err := c.CommandAPIv2clientordersdelete(ctx, orderId, params, reqEditors...)
