@@ -52,9 +52,8 @@ func main() {
 	depth := 20
 	guid := ulid.Make().String()
 
-	// FIXME
-	// opcode := string(alor4go.OrderBookGetAndSubscribe)
-	opcode := "OrderBookGetAndSubscribe"
+	opcode := alor4go.OrderBookGetAndSubscribe
+	// opcode := "OrderBookGetAndSubscribe" // fix for old yaml spec
 
 	obReq := alor4go.WSProdOrderBookJSONRequestBody{
 		Token:    &jwt,
