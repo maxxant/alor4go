@@ -1246,6 +1246,15 @@ paths:
          schema:
            type: boolean
          example: false
+       - name: includeVirtualTrades
+         in: query
+         description: 'Флаг загрузки виртуальных (индикативных) сделок, полученных из заявок на питерской бирже'
+         required: false
+         style: form
+         explode: true
+         schema:
+           type: boolean
+         example: false
      responses:
        '200':
          description: 'OK'
@@ -5740,6 +5749,10 @@ components:
            description: 'Если указать, то перед актуальными данными придут данные о последних N сделках. Максимум 5000.'
            type: number
            example: 0
+        "includeVirtualTrades":
+           description: 'Указывает, нужно ли отправлять виртуальные (индикативные) сделки'
+           type: boolean
+           example: false
         "guid":
            description: 'Уникальный идентификатор сообщений создаваемой подписки. Все входящие сообщения, соответствующие этой подписке, будут иметь такое значение поля guid.'
            type: string
