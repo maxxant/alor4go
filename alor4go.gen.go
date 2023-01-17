@@ -663,7 +663,7 @@ type Alltrade struct {
 	Orderno *int `json:"orderno,omitempty"`
 
 	// Price Цена
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Qty Количество
 	Qty *int `json:"qty,omitempty"`
@@ -698,7 +698,7 @@ type BodyrequestOrdersActionsLimitTV struct {
 	} `json:"instrument,omitempty"`
 
 	// Price Цена
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Quantity Количество (лоты)
 	Quantity *int `json:"quantity,omitempty"`
@@ -730,7 +730,7 @@ type BodyrequestOrdersActionsLimitTVput struct {
 	} `json:"instrument,omitempty"`
 
 	// Price Цена
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Quantity Количество
 	Quantity *int `json:"quantity,omitempty"`
@@ -860,7 +860,7 @@ type BodyrequestOrdersActionsStopLimitTVWarp struct {
 	} `json:"instrument,omitempty"`
 
 	// Price Цена выставления лимитной заявки
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Quantity Количество (лоты)
 	Quantity *int `json:"quantity,omitempty"`
@@ -869,10 +869,10 @@ type BodyrequestOrdersActionsStopLimitTVWarp struct {
 	Side *BodyrequestOrdersActionsStopLimitTVWarpSide `json:"side,omitempty"`
 
 	// StopEndUnixTime Срок действия (UTC) в формате Unix Time seconds
-	StopEndUnixTime *float32 `json:"stopEndUnixTime,omitempty"`
+	StopEndUnixTime *float64 `json:"stopEndUnixTime,omitempty"`
 
 	// TriggerPrice Цена срабатывания
-	TriggerPrice *float32 `json:"triggerPrice,omitempty"`
+	TriggerPrice *float64 `json:"triggerPrice,omitempty"`
 	User         *struct {
 		// Exchange Биржа
 		Exchange *string `json:"exchange,omitempty"`
@@ -907,10 +907,10 @@ type BodyrequestOrdersActionsStopMarketTVWarp struct {
 	Side *BodyrequestOrdersActionsStopMarketTVWarpSide `json:"side,omitempty"`
 
 	// StopEndUnixTime Срок действия (UTC) в формате Unix Time seconds
-	StopEndUnixTime *float32 `json:"stopEndUnixTime,omitempty"`
+	StopEndUnixTime *float64 `json:"stopEndUnixTime,omitempty"`
 
 	// TriggerPrice Цена срабатывания
-	TriggerPrice *float32 `json:"triggerPrice,omitempty"`
+	TriggerPrice *float64 `json:"triggerPrice,omitempty"`
 	User         *struct {
 		// Exchange Биржа
 		Exchange *string `json:"exchange,omitempty"`
@@ -1013,40 +1013,40 @@ type EstimateOrderViewModel struct {
 // Fortsrisk defines model for fortsrisk.
 type Fortsrisk struct {
 	// BalanceMoney Сальдо денежных торговых переводов за текущую сессию (поле будет удалено в будущих обновлениях)
-	BalanceMoney *float32 `json:"balanceMoney,omitempty"`
+	BalanceMoney *float64 `json:"balanceMoney,omitempty"`
 
 	// Fee Списанный сбор
-	Fee *float32 `json:"fee,omitempty"`
+	Fee *float64 `json:"fee,omitempty"`
 
 	// IsLimitsSet Наличие установленных денежного и залогового лимитов
 	IsLimitsSet *bool `json:"isLimitsSet,omitempty"`
 
 	// MoneyAmount Общее количество рублей и дисконтированных в рубли залогов
-	MoneyAmount *float32 `json:"moneyAmount,omitempty"`
+	MoneyAmount *float64 `json:"moneyAmount,omitempty"`
 
 	// MoneyBlocked Средства, заблокированные под ГО
-	MoneyBlocked *float32 `json:"moneyBlocked,omitempty"`
+	MoneyBlocked *float64 `json:"moneyBlocked,omitempty"`
 
 	// MoneyFree Свободные средства. Сумма рублей и залогов, дисконтированных в рубли, доступная для открытия позиций. (MoneyFree = MoneyAmount + VmInterCl – MoneyBlocked – VmReserve – Fee)
-	MoneyFree *float32 `json:"moneyFree,omitempty"`
+	MoneyFree *float64 `json:"moneyFree,omitempty"`
 
 	// MoneyOld Общее количество рублей и дисконтированных в рубли залогов на начало сессии
-	MoneyOld *float32 `json:"moneyOld,omitempty"`
+	MoneyOld *float64 `json:"moneyOld,omitempty"`
 
 	// MoneyPledgeAmount Сумма залогов, дисконтированных в рубли
-	MoneyPledgeAmount *float32 `json:"moneyPledgeAmount,omitempty"`
+	MoneyPledgeAmount *float64 `json:"moneyPledgeAmount,omitempty"`
 
 	// Portfolio Идентификатор клиентского портфеля
 	Portfolio *string `json:"portfolio,omitempty"`
 
 	// VarMargin VmCurrentPositions + VmInterCl
-	VarMargin *float32 `json:"varMargin,omitempty"`
+	VarMargin *float64 `json:"varMargin,omitempty"`
 
 	// VmCurrentPositions Сагрегированная вармаржа по текущим позициям
-	VmCurrentPositions *float32 `json:"vmCurrentPositions,omitempty"`
+	VmCurrentPositions *float64 `json:"vmCurrentPositions,omitempty"`
 
 	// VmInterCl Вариационная маржа, списанная или полученная в пром. клиринг
-	VmInterCl *float32 `json:"vmInterCl,omitempty"`
+	VmInterCl *float64 `json:"vmInterCl,omitempty"`
 }
 
 // History defines model for history.
@@ -1063,16 +1063,16 @@ type History struct {
 // HistoryObject defines model for history_object.
 type HistoryObject struct {
 	// Close Цена при закрытии
-	Close *float32 `json:"close,omitempty"`
+	Close *float64 `json:"close,omitempty"`
 
 	// High Максимальная цена
-	High *float32 `json:"high,omitempty"`
+	High *float64 `json:"high,omitempty"`
 
 	// Low Миниимальная цена
-	Low *float32 `json:"low,omitempty"`
+	Low *float64 `json:"low,omitempty"`
 
 	// Open Цена при открытии
-	Open *float32 `json:"open,omitempty"`
+	Open *float64 `json:"open,omitempty"`
 
 	// Time Время (UTC) (Unix time seconds)
 	Time *int `json:"time,omitempty"`
@@ -1084,31 +1084,31 @@ type HistoryObject struct {
 // Money defines model for money.
 type Money struct {
 	// Cash Количество средств
-	Cash *float32 `json:"cash,omitempty"`
+	Cash *float64 `json:"cash,omitempty"`
 
 	// Changes Изменения
-	Changes *float32 `json:"changes,omitempty"`
+	Changes *float64 `json:"changes,omitempty"`
 
 	// Comission Комиссия (в рублях)
-	Comission *float32 `json:"comission,omitempty"`
+	Comission *float64 `json:"comission,omitempty"`
 
 	// Free Свободные средства
-	Free *float32 `json:"free,omitempty"`
+	Free *float64 `json:"free,omitempty"`
 
 	// Open Средства на момент открытия
-	Open *float32 `json:"open,omitempty"`
+	Open *float64 `json:"open,omitempty"`
 
 	// Portfolio Идентификатор клиентского портфеля
-	Portfolio *float32 `json:"portfolio,omitempty"`
+	Portfolio *float64 `json:"portfolio,omitempty"`
 
 	// Profit Прибыль
-	Profit *float32 `json:"profit,omitempty"`
+	Profit *float64 `json:"profit,omitempty"`
 
 	// ProfitRate Прибыль в процентах
-	ProfitRate *float32 `json:"profitRate,omitempty"`
+	ProfitRate *float64 `json:"profitRate,omitempty"`
 
 	// Used Количество использованных
-	Used *float32 `json:"used,omitempty"`
+	Used *float64 `json:"used,omitempty"`
 }
 
 // Order defines model for order.
@@ -1126,28 +1126,28 @@ type Order struct {
 	Existing *bool `json:"existing,omitempty"`
 
 	// Filled Количество исполненных (лоты)
-	Filled *float32 `json:"filled,omitempty"`
+	Filled *float64 `json:"filled,omitempty"`
 
 	// FilledQtyBatch Количество исполненных (лоты)
-	FilledQtyBatch *float32 `json:"filledQtyBatch,omitempty"`
+	FilledQtyBatch *float64 `json:"filledQtyBatch,omitempty"`
 
 	// FilledQtyUnits Количество исполненных (штуки)
-	FilledQtyUnits *float32 `json:"filledQtyUnits,omitempty"`
+	FilledQtyUnits *float64 `json:"filledQtyUnits,omitempty"`
 
 	// Id Уникальный идентификатор заявки
 	Id *string `json:"id,omitempty"`
 
 	// Price Цена
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Qty Количество (лоты)
-	Qty *float32 `json:"qty,omitempty"`
+	Qty *float64 `json:"qty,omitempty"`
 
 	// QtyBatch Количество (лоты)
-	QtyBatch *float32 `json:"qtyBatch,omitempty"`
+	QtyBatch *float64 `json:"qtyBatch,omitempty"`
 
 	// QtyUnits Количество (штуки)
-	QtyUnits *float32 `json:"qtyUnits,omitempty"`
+	QtyUnits *float64 `json:"qtyUnits,omitempty"`
 
 	// Side Направление сделки. Купля либо продажа.
 	Side *OrderSide `json:"side,omitempty"`
@@ -1186,19 +1186,19 @@ type Orderbook struct {
 	Existing *bool `json:"existing,omitempty"`
 
 	// MsTimestamp Время(UTC) в формате Unix Time Milliseconds
-	MsTimestamp *float32 `json:"ms_timestamp,omitempty"`
+	MsTimestamp *float64 `json:"ms_timestamp,omitempty"`
 
 	// Snapshot Deprecated. Устаревшее поле, будет удалено в будущих обновлениях.
 	Snapshot *bool `json:"snapshot,omitempty"`
 
 	// Timestamp Deprecated. Устаревшее поле, будет удалено в будущих обновлениях. Вместо этого поля используйте поле "ms_timestamp".
-	Timestamp *float32 `json:"timestamp,omitempty"`
+	Timestamp *float64 `json:"timestamp,omitempty"`
 }
 
 // OrderbookAsk defines model for orderbook_ask.
 type OrderbookAsk struct {
 	// Price Цена
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Volume Объём
 	Volume *int `json:"volume,omitempty"`
@@ -1207,7 +1207,7 @@ type OrderbookAsk struct {
 // OrderbookBid defines model for orderbook_bid.
 type OrderbookBid struct {
 	// Price Цена
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Volume Объём
 	Volume *int `json:"volume,omitempty"`
@@ -1268,7 +1268,7 @@ type OrdersActionsStopProfitLoss struct {
 // Position defines model for position.
 type Position struct {
 	// AvgPrice Средняя цена
-	AvgPrice *float32 `json:"avgPrice,omitempty"`
+	AvgPrice *float64 `json:"avgPrice,omitempty"`
 
 	// BrokerSymbol Пара Биржа:Тикер
 	BrokerSymbol *string `json:"brokerSymbol,omitempty"`
@@ -1280,56 +1280,56 @@ type Position struct {
 	IsCurrency *bool `json:"isCurrency,omitempty"`
 
 	// LotSize Размер лота
-	LotSize *float32 `json:"lotSize,omitempty"`
+	LotSize *float64 `json:"lotSize,omitempty"`
 
 	// Open Агрегированное количество на момент открытия (начала торгов) (штуки)
-	Open *float32 `json:"open,omitempty"`
+	Open *float64 `json:"open,omitempty"`
 
 	// OpenQtyBatch Агрегированное количество на момент открытия (начала торгов) (лоты)
-	OpenQtyBatch *float32 `json:"openQtyBatch,omitempty"`
+	OpenQtyBatch *float64 `json:"openQtyBatch,omitempty"`
 
 	// OpenUnits Количество открытых позиций на момент открытия (начала торгов)
-	OpenUnits *float32 `json:"openUnits,omitempty"`
+	OpenUnits *float64 `json:"openUnits,omitempty"`
 
 	// Qty Агрегированное количество (лоты)
-	Qty *float32 `json:"qty,omitempty"`
+	Qty *float64 `json:"qty,omitempty"`
 
 	// QtyBatch Агрегированное количество TFuture
-	QtyBatch *float32 `json:"qtyBatch,omitempty"`
+	QtyBatch *float64 `json:"qtyBatch,omitempty"`
 
 	// QtyT0 Агрегированное количество T0 (штуки)
-	QtyT0 *float32 `json:"qtyT0,omitempty"`
+	QtyT0 *float64 `json:"qtyT0,omitempty"`
 
 	// QtyT0Batch Агрегированное количество T0 (лоты)
-	QtyT0Batch *float32 `json:"qtyT0Batch,omitempty"`
+	QtyT0Batch *float64 `json:"qtyT0Batch,omitempty"`
 
 	// QtyT1 Агрегированное количество T1 (штуки)
-	QtyT1 *float32 `json:"qtyT1,omitempty"`
+	QtyT1 *float64 `json:"qtyT1,omitempty"`
 
 	// QtyT1Batch Агрегированное количество T1 (лоты)
-	QtyT1Batch *float32 `json:"qtyT1Batch,omitempty"`
+	QtyT1Batch *float64 `json:"qtyT1Batch,omitempty"`
 
 	// QtyT2 Агрегированное количество T2 (штуки)
-	QtyT2 *float32 `json:"qtyT2,omitempty"`
+	QtyT2 *float64 `json:"qtyT2,omitempty"`
 
 	// QtyT2Batch Агрегированное количество T2 (лоты)
-	QtyT2Batch *float32 `json:"qtyT2Batch,omitempty"`
+	QtyT2Batch *float64 `json:"qtyT2Batch,omitempty"`
 
 	// QtyTFuture Количество (штуки)
-	QtyTFuture *float32 `json:"qtyTFuture,omitempty"`
+	QtyTFuture *float64 `json:"qtyTFuture,omitempty"`
 
 	// QtyTFutureBatch Агрегированное количество TFuture (лоты)
-	QtyTFutureBatch *float32 `json:"qtyTFutureBatch,omitempty"`
+	QtyTFutureBatch *float64 `json:"qtyTFutureBatch,omitempty"`
 
 	// QtyUnits Количество (штуки)
-	QtyUnits *float32 `json:"qtyUnits,omitempty"`
+	QtyUnits *float64 `json:"qtyUnits,omitempty"`
 
 	// ShortName Короткое наименование
 	ShortName *string `json:"shortName,omitempty"`
 
 	// Symbol Тикер (Код финансового инструмента)
 	Symbol       *string  `json:"symbol,omitempty"`
-	UnrealisedPl *float32 `json:"unrealisedPl,omitempty"`
+	UnrealisedPl *float64 `json:"unrealisedPl,omitempty"`
 }
 
 // Positions defines model for positions.
@@ -1341,7 +1341,7 @@ type Risk struct {
 	ClientType *string `json:"clientType,omitempty"`
 
 	// CorrectedMargin Скорректированная маржа
-	CorrectedMargin *float32 `json:"correctedMargin,omitempty"`
+	CorrectedMargin *float64 `json:"correctedMargin,omitempty"`
 
 	// Exchange Биржа
 	Exchange *string `json:"exchange,omitempty"`
@@ -1353,28 +1353,28 @@ type Risk struct {
 	HasNegativeQuantity *bool `json:"hasNegativeQuantity,omitempty"`
 
 	// InitialMargin Начальная маржа
-	InitialMargin *float32 `json:"initialMargin,omitempty"`
+	InitialMargin *float64 `json:"initialMargin,omitempty"`
 
 	// MinimalMargin Минимальная маржа
-	MinimalMargin *float32 `json:"minimalMargin,omitempty"`
+	MinimalMargin *float64 `json:"minimalMargin,omitempty"`
 
 	// Portfolio Идентификатор клиентского портфеля
 	Portfolio *string `json:"portfolio,omitempty"`
 
 	// PortfolioEvaluation Общая стоимость портфеля
-	PortfolioEvaluation *float32 `json:"portfolioEvaluation,omitempty"`
+	PortfolioEvaluation *float64 `json:"portfolioEvaluation,omitempty"`
 
 	// PortfolioLiquidationValue Стоимость ликвидного портфеля
-	PortfolioLiquidationValue *float32 `json:"portfolioLiquidationValue,omitempty"`
+	PortfolioLiquidationValue *float64 `json:"portfolioLiquidationValue,omitempty"`
 
 	// RiskCategoryId Категория риска
 	RiskCategoryId *int `json:"riskCategoryId,omitempty"`
 
 	// RiskCoverageRatioOne НПР1
-	RiskCoverageRatioOne *float32 `json:"riskCoverageRatioOne,omitempty"`
+	RiskCoverageRatioOne *float64 `json:"riskCoverageRatioOne,omitempty"`
 
 	// RiskCoverageRatioTwo НПР2
-	RiskCoverageRatioTwo *float32 `json:"riskCoverageRatioTwo,omitempty"`
+	RiskCoverageRatioTwo *float64 `json:"riskCoverageRatioTwo,omitempty"`
 }
 
 // RiskRate defines model for riskRate.
@@ -1392,7 +1392,7 @@ type RiskRate struct {
 	Exchange *string `json:"exchange,omitempty"`
 
 	// Id Id записи
-	Id *float32 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 
 	// Instrument Инструмент
 	Instrument *string `json:"instrument,omitempty"`
@@ -1410,25 +1410,25 @@ type RiskRate struct {
 	Isin *string `json:"isin,omitempty"`
 
 	// RateDown Ставка риска понижения цены. Применяется для лонгов.
-	RateDown *float32 `json:"rateDown,omitempty"`
+	RateDown *float64 `json:"rateDown,omitempty"`
 
 	// RateSymmetric Симметричная ставка риска. Приведена для справки, не используется
-	RateSymmetric *float32 `json:"rateSymmetric,omitempty"`
+	RateSymmetric *float64 `json:"rateSymmetric,omitempty"`
 
 	// RateUp Ставка риска повышения цены. Применяется для шортов.
-	RateUp *float32 `json:"rateUp,omitempty"`
+	RateUp *float64 `json:"rateUp,omitempty"`
 
 	// RiskCategoryId Id категории риска
-	RiskCategoryId *float32 `json:"riskCategoryId,omitempty"`
+	RiskCategoryId *float64 `json:"riskCategoryId,omitempty"`
 
 	// SecurityRiskCategoryId Id категории бумаги для категоризации.
-	SecurityRiskCategoryId *float32 `json:"securityRiskCategoryId"`
+	SecurityRiskCategoryId *float64 `json:"securityRiskCategoryId"`
 
 	// SetName Чаще всего будет null. Поле показывает к множеству инструменту принадлежит данный инструмент.
 	SetName *string `json:"setName"`
 
 	// SetRate Ставка риска множества
-	SetRate *float32 `json:"setRate,omitempty"`
+	SetRate *float64 `json:"setRate,omitempty"`
 
 	// UnderlyingAsset Чаще всего будет null. Поле показывает к какому базовому инструменту принадлежит данный инструмент.
 	UnderlyingAsset *string `json:"underlyingAsset"`
@@ -1473,43 +1473,43 @@ type Security struct {
 	Exchange *string `json:"exchange,omitempty"`
 
 	// Facevalue Номинальная стоимость
-	Facevalue *float32 `json:"facevalue,omitempty"`
+	Facevalue *float64 `json:"facevalue,omitempty"`
 
 	// Lotsize Размер лота
-	Lotsize *float32 `json:"lotsize,omitempty"`
+	Lotsize *float64 `json:"lotsize,omitempty"`
 
 	// Marginbuy Цена маржинальной покупки (заемные средства)
-	Marginbuy *float32 `json:"marginbuy,omitempty"`
+	Marginbuy *float64 `json:"marginbuy,omitempty"`
 
 	// Marginrate Отношение цены маржинальной покупки к цене последней сделки
-	Marginrate *float32 `json:"marginrate,omitempty"`
+	Marginrate *float64 `json:"marginrate,omitempty"`
 
 	// Marginsell Цена маржинальной продажи (заемные средства)
-	Marginsell *float32 `json:"marginsell,omitempty"`
+	Marginsell *float64 `json:"marginsell,omitempty"`
 
 	// Minstep Минимальный шаг цены
-	Minstep *float32 `json:"minstep,omitempty"`
+	Minstep *float64 `json:"minstep,omitempty"`
 
 	// PriceMax Максимальная цена
-	PriceMax *float32 `json:"priceMax,omitempty"`
+	PriceMax *float64 `json:"priceMax,omitempty"`
 
 	// PriceMin Минимальная цена
-	PriceMin *float32 `json:"priceMin,omitempty"`
+	PriceMin *float64 `json:"priceMin,omitempty"`
 
 	// Pricestep Минимальный шаг цены, выраженный в рублях
-	Pricestep *float32 `json:"pricestep,omitempty"`
+	Pricestep *float64 `json:"pricestep,omitempty"`
 
 	// PrimaryBoard Код режима торгов
 	PrimaryBoard *string  `json:"primary_board,omitempty"`
-	Rating       *float32 `json:"rating,omitempty"`
+	Rating       *float64 `json:"rating,omitempty"`
 
 	// Shortname Краткое наименование инструмента
 	Shortname *string `json:"shortname,omitempty"`
 
 	// Symbol Тикер (Код финансового инструмента)
 	Symbol          *string  `json:"symbol,omitempty"`
-	TheorPrice      *float32 `json:"theorPrice,omitempty"`
-	TheorPriceLimit *float32 `json:"theorPriceLimit,omitempty"`
+	TheorPrice      *float64 `json:"theorPrice,omitempty"`
+	TheorPriceLimit *float64 `json:"theorPriceLimit,omitempty"`
 
 	// TradingStatus Торговый статус инструмента
 	TradingStatus *int `json:"tradingStatus,omitempty"`
@@ -1521,7 +1521,7 @@ type Security struct {
 	Type *string `json:"type,omitempty"`
 
 	// Volatility Волативность
-	Volatility *float32 `json:"volatility,omitempty"`
+	Volatility *float64 `json:"volatility,omitempty"`
 	Yield      *string  `json:"yield"`
 }
 
@@ -1589,16 +1589,16 @@ type Stoporder struct {
 	Existing *bool `json:"existing,omitempty"`
 
 	// FilledQtyBatch Количество исполненных
-	FilledQtyBatch *float32 `json:"filledQtyBatch,omitempty"`
+	FilledQtyBatch *float64 `json:"filledQtyBatch,omitempty"`
 
 	// Id Уникальный идентификатор стоп-заявки
-	Id *float32 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 
 	// Price Цена(Лимит)
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Qty Количество
-	Qty *float32 `json:"qty,omitempty"`
+	Qty *float64 `json:"qty,omitempty"`
 
 	// Side Направление сделки. Купля либо продажа.
 	Side *StoporderSide `json:"side,omitempty"`
@@ -1607,7 +1607,7 @@ type Stoporder struct {
 	Status *StoporderStatus `json:"status,omitempty"`
 
 	// StopPrice Условная цена
-	StopPrice *float32 `json:"stopPrice,omitempty"`
+	StopPrice *float64 `json:"stopPrice,omitempty"`
 
 	// Symbol Тикер (Код финансового инструмента)
 	Symbol *string `json:"symbol,omitempty"`
@@ -1628,7 +1628,7 @@ type StoporderType string
 // StoporderWarp defines model for stoporderWarp.
 type StoporderWarp struct {
 	// AvgPrice Средняя цена
-	AvgPrice *float32 `json:"avg_price,omitempty"`
+	AvgPrice *float64 `json:"avg_price,omitempty"`
 
 	// BrokerSymbol Пара Биржа:Тикер
 	BrokerSymbol *string `json:"brokerSymbol,omitempty"`
@@ -1643,28 +1643,28 @@ type StoporderWarp struct {
 	Exchange *string `json:"exchange,omitempty"`
 
 	// ExchangeOrderId Уникальный идентификатор стоп-заявки
-	ExchangeOrderId *float32 `json:"exchangeOrderId,omitempty"`
+	ExchangeOrderId *float64 `json:"exchangeOrderId,omitempty"`
 
 	// Existing True - для данных из "снепшота", то есть из истории. False - для новых событий
 	Existing *bool `json:"existing,omitempty"`
 
 	// Id Уникальный идентификатор стоп-заявки
-	Id *float32 `json:"id,omitempty"`
+	Id *float64 `json:"id,omitempty"`
 
 	// Portfolio Пара Биржа:Тикер
 	Portfolio *string `json:"portfolio,omitempty"`
 
 	// Price Цена(Лимит)
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Qty Количество (Лоты)
-	Qty *float32 `json:"qty,omitempty"`
+	Qty *float64 `json:"qty,omitempty"`
 
 	// QtyBatch Количество (Лоты)
-	QtyBatch *float32 `json:"qtyBatch,omitempty"`
+	QtyBatch *float64 `json:"qtyBatch,omitempty"`
 
 	// QtyUnits Количество (Штуки)
-	QtyUnits *float32 `json:"qtyUnits,omitempty"`
+	QtyUnits *float64 `json:"qtyUnits,omitempty"`
 
 	// Side Направление сделки. Купля либо продажа.
 	Side *StoporderWarpSide `json:"side,omitempty"`
@@ -1673,7 +1673,7 @@ type StoporderWarp struct {
 	Status *StoporderWarpStatus `json:"status,omitempty"`
 
 	// StopPrice Условная цена
-	StopPrice *float32 `json:"stopPrice,omitempty"`
+	StopPrice *float64 `json:"stopPrice,omitempty"`
 
 	// Symbol Тикер (Код финансового инструмента)
 	Symbol *string `json:"symbol,omitempty"`
@@ -1700,31 +1700,31 @@ type StopordersWarp = []StoporderWarp
 // Summary defines model for summary.
 type Summary struct {
 	// BuyingPower Покупательская способность
-	BuyingPower *float32 `json:"buyingPower,omitempty"`
+	BuyingPower *float64 `json:"buyingPower,omitempty"`
 
 	// BuyingPowerAtMorning Покупательская способность на утро
-	BuyingPowerAtMorning *float32 `json:"buyingPowerAtMorning,omitempty"`
+	BuyingPowerAtMorning *float64 `json:"buyingPowerAtMorning,omitempty"`
 
 	// Commission Суммарная комиссия (null для Срочного рынка)
-	Commission *float32 `json:"commission"`
+	Commission *float64 `json:"commission"`
 
 	// InitialMargin Маржа
-	InitialMargin *float32 `json:"initialMargin,omitempty"`
+	InitialMargin *float64 `json:"initialMargin,omitempty"`
 
 	// PortfolioEvaluation Ликвидный портфель
-	PortfolioEvaluation *float32 `json:"portfolioEvaluation,omitempty"`
+	PortfolioEvaluation *float64 `json:"portfolioEvaluation,omitempty"`
 
 	// PortfolioLiquidationValue Оценка портфеля
-	PortfolioLiquidationValue *float32 `json:"portfolioLiquidationValue,omitempty"`
+	PortfolioLiquidationValue *float64 `json:"portfolioLiquidationValue,omitempty"`
 
 	// Profit Прибыль за сегодня
-	Profit *float32 `json:"profit,omitempty"`
+	Profit *float64 `json:"profit,omitempty"`
 
 	// ProfitRate Норма прибыли, %
-	ProfitRate *float32 `json:"profitRate,omitempty"`
+	ProfitRate *float64 `json:"profitRate,omitempty"`
 
 	// RiskBeforeForcePositionClosing Риск до закрытия
-	RiskBeforeForcePositionClosing *float32 `json:"riskBeforeForcePositionClosing,omitempty"`
+	RiskBeforeForcePositionClosing *float64 `json:"riskBeforeForcePositionClosing,omitempty"`
 }
 
 // Symbol defines model for symbol.
@@ -1736,53 +1736,53 @@ type Symbol struct {
 	AccruedInterest *int `json:"accrued_interest,omitempty"`
 
 	// Ask Аск
-	Ask *float32 `json:"ask,omitempty"`
+	Ask *float64 `json:"ask,omitempty"`
 
 	// Bid Бид
-	Bid *float32 `json:"bid,omitempty"`
+	Bid *float64 `json:"bid,omitempty"`
 
 	// Change Разность цены и цены предыдущего закрытия
-	Change *float32 `json:"change,omitempty"`
+	Change *float64 `json:"change,omitempty"`
 
 	// ChangePercent Относительное изменение цены
-	ChangePercent *float32 `json:"change_percent,omitempty"`
+	ChangePercent *float64 `json:"change_percent,omitempty"`
 
 	// Description Короткое описание на русском языке
 	Description *string `json:"description,omitempty"`
 
 	// Exchange Биржа
 	Exchange  *string  `json:"exchange,omitempty"`
-	Facevalue *float32 `json:"facevalue,omitempty"`
+	Facevalue *float64 `json:"facevalue,omitempty"`
 
 	// HighPrice Максимальная цена
-	HighPrice *float32 `json:"high_price,omitempty"`
+	HighPrice *float64 `json:"high_price,omitempty"`
 
 	// LastPrice Последняя цена
-	LastPrice *float32 `json:"last_price,omitempty"`
+	LastPrice *float64 `json:"last_price,omitempty"`
 
 	// LastPriceTimestamp UTC-timestamp для значения поля "last_price"
-	LastPriceTimestamp *float32 `json:"last_price_timestamp,omitempty"`
+	LastPriceTimestamp *float64 `json:"last_price_timestamp,omitempty"`
 
 	// Lotsize Размер лота
-	Lotsize  *float32 `json:"lotsize,omitempty"`
-	Lotvalue *float32 `json:"lotvalue,omitempty"`
+	Lotsize  *float64 `json:"lotsize,omitempty"`
+	Lotvalue *float64 `json:"lotvalue,omitempty"`
 
 	// LowPrice Минимальная цена
-	LowPrice     *float32 `json:"low_price,omitempty"`
-	OpenInterest *float32 `json:"open_interest"`
+	LowPrice     *float64 `json:"low_price,omitempty"`
+	OpenInterest *float64 `json:"open_interest"`
 
 	// OpenPrice Цена открытия
-	OpenPrice *float32 `json:"open_price,omitempty"`
+	OpenPrice *float64 `json:"open_price,omitempty"`
 
 	// PrevClosePrice Цена предыдущего закрытия
-	PrevClosePrice *float32 `json:"prev_close_price,omitempty"`
+	PrevClosePrice *float64 `json:"prev_close_price,omitempty"`
 
 	// Symbol Тикер (Код финансового инструмента)
 	Symbol *string `json:"symbol,omitempty"`
 	Type   *string `json:"type,omitempty"`
 
 	// Volume Объём
-	Volume *float32 `json:"volume,omitempty"`
+	Volume *float64 `json:"volume,omitempty"`
 	Yield  *int     `json:"yield,omitempty"`
 }
 
@@ -1795,52 +1795,52 @@ type SymbolFutures struct {
 	AccruedInterest *int `json:"accrued_interest"`
 
 	// Ask Аск
-	Ask *float32 `json:"ask,omitempty"`
+	Ask *float64 `json:"ask,omitempty"`
 
 	// Bid Бид
-	Bid *float32 `json:"bid,omitempty"`
+	Bid *float64 `json:"bid,omitempty"`
 
 	// Change Разность цены и цены предыдущего закрытия
-	Change *float32 `json:"change"`
+	Change *float64 `json:"change"`
 
 	// ChangePercent Относительное изменение цены
-	ChangePercent *float32 `json:"change_percent"`
+	ChangePercent *float64 `json:"change_percent"`
 
 	// Description Короткое описание на русском языке
 	Description *string `json:"description,omitempty"`
 
 	// Exchange Биржа
 	Exchange  *string  `json:"exchange,omitempty"`
-	Facevalue *float32 `json:"facevalue,omitempty"`
+	Facevalue *float64 `json:"facevalue,omitempty"`
 
 	// HighPrice Максимальная цена
-	HighPrice *float32 `json:"high_price,omitempty"`
+	HighPrice *float64 `json:"high_price,omitempty"`
 
 	// LastPrice Последняя цена
-	LastPrice *float32 `json:"last_price,omitempty"`
+	LastPrice *float64 `json:"last_price,omitempty"`
 
 	// LastPriceTimestamp Время последней цены (UTC)
 	LastPriceTimestamp *int `json:"last_price_timestamp,omitempty"`
 
 	// Lotsize Размер лота
-	Lotsize  *float32 `json:"lotsize,omitempty"`
-	Lotvalue *float32 `json:"lotvalue,omitempty"`
+	Lotsize  *float64 `json:"lotsize,omitempty"`
+	Lotvalue *float64 `json:"lotvalue,omitempty"`
 
 	// LowPrice Минимальная цена
-	LowPrice *float32 `json:"low_price,omitempty"`
+	LowPrice *float64 `json:"low_price,omitempty"`
 
 	// OpenPrice Цена открытия
-	OpenPrice *float32 `json:"open_price,omitempty"`
+	OpenPrice *float64 `json:"open_price,omitempty"`
 
 	// PrevClosePrice Цена предыдущего закрытия
-	PrevClosePrice *float32 `json:"prev_close_price,omitempty"`
+	PrevClosePrice *float64 `json:"prev_close_price,omitempty"`
 
 	// Symbol Тикер (Код финансового инструмента)
 	Symbol *string `json:"symbol,omitempty"`
 	Type   *string `json:"type,omitempty"`
 
 	// Volume Объём
-	Volume *float32 `json:"volume,omitempty"`
+	Volume *float64 `json:"volume,omitempty"`
 	Yield  *int     `json:"yield,omitempty"`
 }
 
@@ -1874,7 +1874,7 @@ type Trade struct {
 	Orderno *string `json:"orderno,omitempty"`
 
 	// Price Цена
-	Price *float32 `json:"price,omitempty"`
+	Price *float64 `json:"price,omitempty"`
 
 	// Qty Количество (лоты)
 	Qty *int `json:"qty,omitempty"`
@@ -1904,7 +1904,7 @@ type WsReqAllTradesGetAndSubscribe struct {
 	Code *string `json:"code,omitempty"`
 
 	// Depth Если указать, то перед актуальными данными придут данные о последних N сделках. Максимум 5000.
-	Depth *float32 `json:"depth,omitempty"`
+	Depth *float64 `json:"depth,omitempty"`
 
 	// Exchange Биржа
 	Exchange *WsReqAllTradesGetAndSubscribeExchange `json:"exchange,omitempty"`
@@ -2311,16 +2311,16 @@ type WsResBarsGetAndSubscribe struct {
 	// Data Сообщение с данными о ценах на рынке (свечи)
 	Data *struct {
 		// Close Цена при закрытии
-		Close *float32 `json:"close,omitempty"`
+		Close *float64 `json:"close,omitempty"`
 
 		// High Максимальная цена
-		High *float32 `json:"high,omitempty"`
+		High *float64 `json:"high,omitempty"`
 
 		// Low Минимальная цена
-		Low *float32 `json:"low,omitempty"`
+		Low *float64 `json:"low,omitempty"`
 
 		// Open Цена при открытии
-		Open *float32 `json:"open,omitempty"`
+		Open *float64 `json:"open,omitempty"`
 
 		// Time Время (UTC) (Unix time seconds)
 		Time *int `json:"time,omitempty"`
@@ -2367,13 +2367,13 @@ type WsResPositionsGetAndSubscribe struct {
 	// Data Сообщение с данными о позициях по ценным бумагам и валютным остаткам
 	Data *struct {
 		// AvgPrice Средняя цена сделок по позициям
-		AvgPrice *float32 `json:"avgPrice,omitempty"`
+		AvgPrice *float64 `json:"avgPrice,omitempty"`
 
 		// BrokerSymbol Биржа:Тикер
 		BrokerSymbol *string `json:"brokerSymbol,omitempty"`
 
 		// DailyUnrealisedPl Нереализованная прибыль за день
-		DailyUnrealisedPl *float32 `json:"dailyUnrealisedPl,omitempty"`
+		DailyUnrealisedPl *float64 `json:"dailyUnrealisedPl,omitempty"`
 
 		// Exchange Биржа
 		Exchange *string `json:"exchange,omitempty"`
@@ -2433,7 +2433,7 @@ type WsResPositionsGetAndSubscribe struct {
 		Symbol *string `json:"symbol,omitempty"`
 
 		// UnrealisedPl Нереализованная прибыль
-		UnrealisedPl *float32 `json:"unrealisedPl,omitempty"`
+		UnrealisedPl *float64 `json:"unrealisedPl,omitempty"`
 	} `json:"data,omitempty"`
 
 	// Guid Уникальный идентификатор сообщений подписки. Значение во входящем сообщении равно значению одноимённого поля, переданному при установке соединения.
@@ -2450,52 +2450,52 @@ type WsResQuotesSubscribe struct {
 		AccruedInterest *int `json:"accrued_interest"`
 
 		// Ask Аск
-		Ask *float32 `json:"ask,omitempty"`
+		Ask *float64 `json:"ask,omitempty"`
 
 		// Bid Бид
-		Bid *float32 `json:"bid,omitempty"`
+		Bid *float64 `json:"bid,omitempty"`
 
 		// Change Разность цены и цены предыдущего закрытия
-		Change *float32 `json:"change"`
+		Change *float64 `json:"change"`
 
 		// ChangePercent Относительное изменение цены
-		ChangePercent *float32 `json:"change_percent"`
+		ChangePercent *float64 `json:"change_percent"`
 
 		// Description Короткое описание на русском языке
 		Description *string `json:"description,omitempty"`
 
 		// Exchange Биржа
 		Exchange  *string  `json:"exchange,omitempty"`
-		Facevalue *float32 `json:"facevalue,omitempty"`
+		Facevalue *float64 `json:"facevalue,omitempty"`
 
 		// HighPrice Максимальная цена
-		HighPrice *float32 `json:"high_price,omitempty"`
+		HighPrice *float64 `json:"high_price,omitempty"`
 
 		// LastPrice Последняя цена
-		LastPrice *float32 `json:"last_price,omitempty"`
+		LastPrice *float64 `json:"last_price,omitempty"`
 
 		// LastPriceTimestamp Время последней цены (UTC)
 		LastPriceTimestamp *int `json:"last_price_timestamp,omitempty"`
 
 		// Lotsize Размер лота
-		Lotsize  *float32 `json:"lotsize,omitempty"`
-		Lotvalue *float32 `json:"lotvalue,omitempty"`
+		Lotsize  *float64 `json:"lotsize,omitempty"`
+		Lotvalue *float64 `json:"lotvalue,omitempty"`
 
 		// LowPrice Минимальная цена
-		LowPrice *float32 `json:"low_price,omitempty"`
+		LowPrice *float64 `json:"low_price,omitempty"`
 
 		// OpenPrice Цена открытия
-		OpenPrice *float32 `json:"open_price,omitempty"`
+		OpenPrice *float64 `json:"open_price,omitempty"`
 
 		// PrevClosePrice Цена предыдущего закрытия
-		PrevClosePrice *float32 `json:"prev_close_price,omitempty"`
+		PrevClosePrice *float64 `json:"prev_close_price,omitempty"`
 
 		// Symbol Тикер (Код финансового инструмента)
 		Symbol *string `json:"symbol,omitempty"`
 		Type   *string `json:"type,omitempty"`
 
 		// Volume Объём
-		Volume *float32 `json:"volume,omitempty"`
+		Volume *float64 `json:"volume,omitempty"`
 		Yield  *int     `json:"yield,omitempty"`
 	} `json:"data,omitempty"`
 
@@ -2540,31 +2540,31 @@ type WsResSummariesGetAndSubscribeV2 struct {
 	// Data Сообщение с данными о позициях по деньгам
 	Data *struct {
 		// BuyingPower Покупательская способность
-		BuyingPower *float32 `json:"buyingPower,omitempty"`
+		BuyingPower *float64 `json:"buyingPower,omitempty"`
 
 		// BuyingPowerAtMorning Покупательская способность (на утро)
-		BuyingPowerAtMorning *float32 `json:"buyingPowerAtMorning,omitempty"`
+		BuyingPowerAtMorning *float64 `json:"buyingPowerAtMorning,omitempty"`
 
 		// Commission Суммарная комиссия (null для Срочного рынка)
-		Commission *float32 `json:"commission"`
+		Commission *float64 `json:"commission"`
 
 		// InitialMargin Начальная маржа
-		InitialMargin *float32 `json:"initialMargin,omitempty"`
+		InitialMargin *float64 `json:"initialMargin,omitempty"`
 
 		// PortfolioEvaluation Ликвидный портфель
-		PortfolioEvaluation *float32 `json:"portfolioEvaluation,omitempty"`
+		PortfolioEvaluation *float64 `json:"portfolioEvaluation,omitempty"`
 
 		// PortfolioLiquidationValue Оценка портфеля
-		PortfolioLiquidationValue *float32 `json:"portfolioLiquidationValue,omitempty"`
+		PortfolioLiquidationValue *float64 `json:"portfolioLiquidationValue,omitempty"`
 
 		// Profit Прибыль
-		Profit *float32 `json:"profit,omitempty"`
+		Profit *float64 `json:"profit,omitempty"`
 
 		// ProfitRate Относительная прибыль
-		ProfitRate *float32 `json:"profitRate,omitempty"`
+		ProfitRate *float64 `json:"profitRate,omitempty"`
 
 		// RiskBeforeForcePositionClosing Риск до закрытия
-		RiskBeforeForcePositionClosing *float32 `json:"riskBeforeForcePositionClosing,omitempty"`
+		RiskBeforeForcePositionClosing *float64 `json:"riskBeforeForcePositionClosing,omitempty"`
 	} `json:"data,omitempty"`
 
 	// Guid Уникальный идентификатор сообщений подписки. Значение во входящем сообщении равно значению одноимённого поля, переданному при установке соединения.
