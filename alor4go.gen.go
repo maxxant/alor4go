@@ -1868,10 +1868,10 @@ type Trade struct {
 	Existing *bool `json:"existing,omitempty"`
 
 	// Id Уникальный идентификатор сделки
-	Id *string `json:"id,omitempty"`
+	Id *json.Number `json:"id,omitempty"`
 
 	// Orderno Идентификатор заявки
-	Orderno *string `json:"orderno,omitempty"`
+	Orderno *json.Number `json:"orderno,omitempty"`
 
 	// Price Цена
 	Price *float64 `json:"price,omitempty"`
