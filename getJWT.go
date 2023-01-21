@@ -50,7 +50,10 @@ func GetJWT() string {
 		fmt.Println(string(dump))
 	}
 
-	resp, _ := client.Do(req)
+	resp, err := client.Do(req)
+	if err != nil {
+		return ""
+	}
 	// fmt.Println(resp.Status)
 
 	defer resp.Body.Close()
