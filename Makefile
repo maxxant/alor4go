@@ -12,7 +12,7 @@ get:
 .PHONY: gen
 gen:
 	which oapi-codegen
-	oapi-codegen -package alor4go ./WarpOpenAPIv2.yml > alor4go.gen.go
+	oapi-codegen -package alor4go -generate types,client ./WarpOpenAPIv2.yml > alor4go.gen.go
 
 .PHONY: patch
 patch:
