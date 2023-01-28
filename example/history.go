@@ -39,8 +39,8 @@ func main() {
 			Symbol:   "SBER",
 			Exchange: "MOEX",
 			Tf:       "60",
-			From:     int32(time.Date(2022, time.December, 8, 13, 0, 0, 0, time.UTC).Unix()),
-			To:       int32(time.Date(2022, time.December, 8, 13, 3, 0, 0, time.UTC).Unix()),
+			From:     time.Date(2022, time.December, 8, 13, 0, 0, 0, time.UTC).Unix(),
+			To:       time.Date(2022, time.December, 8, 13, 3, 0, 0, time.UTC).Unix(),
 		}
 		resp, err := client.DevHistory(context.Background(), param, requestEdit)
 		if err != nil {

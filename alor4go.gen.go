@@ -678,7 +678,7 @@ type Alltrade struct {
 	Time *string `json:"time,omitempty"`
 
 	// Timestamp Время (UTC) в формате Unix Time Milliseconds
-	Timestamp *int `json:"timestamp,omitempty"`
+	Timestamp *int64 `json:"timestamp,omitempty"`
 }
 
 // AlltradeSide Направление агрессивной заявки. Поле может быть пустым
@@ -820,7 +820,7 @@ type BodyrequestOrdersActionsStop struct {
 	} `json:"Instrument,omitempty"`
 
 	// OrderEndUnixTime Время (UTC) завершения сделки в формате Unix Time Seconds
-	OrderEndUnixTime *int `json:"OrderEndUnixTime,omitempty"`
+	OrderEndUnixTime *int64 `json:"OrderEndUnixTime,omitempty"`
 
 	// Quantity Количество
 	Quantity *int `json:"Quantity,omitempty"`
@@ -869,7 +869,7 @@ type BodyrequestOrdersActionsStopLimitTVWarp struct {
 	Side *BodyrequestOrdersActionsStopLimitTVWarpSide `json:"side,omitempty"`
 
 	// StopEndUnixTime Срок действия (UTC) в формате Unix Time seconds
-	StopEndUnixTime *float64 `json:"stopEndUnixTime,omitempty"`
+	StopEndUnixTime *int64 `json:"stopEndUnixTime,omitempty"`
 
 	// TriggerPrice Цена срабатывания
 	TriggerPrice *float64 `json:"triggerPrice,omitempty"`
@@ -907,7 +907,7 @@ type BodyrequestOrdersActionsStopMarketTVWarp struct {
 	Side *BodyrequestOrdersActionsStopMarketTVWarpSide `json:"side,omitempty"`
 
 	// StopEndUnixTime Срок действия (UTC) в формате Unix Time seconds
-	StopEndUnixTime *float64 `json:"stopEndUnixTime,omitempty"`
+	StopEndUnixTime *int64 `json:"stopEndUnixTime,omitempty"`
 
 	// TriggerPrice Цена срабатывания
 	TriggerPrice *float64 `json:"triggerPrice,omitempty"`
@@ -934,7 +934,7 @@ type BodyrequestOrdersActionsStoplimit struct {
 	} `json:"Instrument,omitempty"`
 
 	// OrderEndUnixTime Время (UTC) завершения сделки в формате Unix Time seconds
-	OrderEndUnixTime *int `json:"OrderEndUnixTime,omitempty"`
+	OrderEndUnixTime *int64 `json:"OrderEndUnixTime,omitempty"`
 
 	// Price Цена
 	Price *int `json:"Price,omitempty"`
@@ -1075,7 +1075,7 @@ type HistoryObject struct {
 	Open *float64 `json:"open,omitempty"`
 
 	// Time Время (UTC) (Unix time seconds)
-	Time *int `json:"time,omitempty"`
+	Time *int64 `json:"time,omitempty"`
 
 	// Volume Объём
 	Volume *int `json:"volume,omitempty"`
@@ -1186,13 +1186,13 @@ type Orderbook struct {
 	Existing *bool `json:"existing,omitempty"`
 
 	// MsTimestamp Время(UTC) в формате Unix Time Milliseconds
-	MsTimestamp *float64 `json:"ms_timestamp,omitempty"`
+	MsTimestamp *int64 `json:"ms_timestamp,omitempty"`
 
 	// Snapshot Deprecated. Устаревшее поле, будет удалено в будущих обновлениях.
-	Snapshot *bool `json:"snapshot,omitempty"`
+	//Snapshot *bool `json:"snapshot,omitempty"`
 
 	// Timestamp Deprecated. Устаревшее поле, будет удалено в будущих обновлениях. Вместо этого поля используйте поле "ms_timestamp".
-	Timestamp *float64 `json:"timestamp,omitempty"`
+	//Timestamp *float64 `json:"timestamp,omitempty"`
 }
 
 // OrderbookAsk defines model for orderbook_ask.
@@ -1761,7 +1761,7 @@ type Symbol struct {
 	LastPrice *float64 `json:"last_price,omitempty"`
 
 	// LastPriceTimestamp UTC-timestamp для значения поля "last_price"
-	LastPriceTimestamp *float64 `json:"last_price_timestamp,omitempty"`
+	LastPriceTimestamp *int64 `json:"last_price_timestamp,omitempty"`
 
 	// Lotsize Размер лота
 	Lotsize  *float64 `json:"lotsize,omitempty"`
@@ -1820,7 +1820,7 @@ type SymbolFutures struct {
 	LastPrice *float64 `json:"last_price,omitempty"`
 
 	// LastPriceTimestamp Время последней цены (UTC)
-	LastPriceTimestamp *int `json:"last_price_timestamp,omitempty"`
+	LastPriceTimestamp *int64 `json:"last_price_timestamp,omitempty"`
 
 	// Lotsize Размер лота
 	Lotsize  *float64 `json:"lotsize,omitempty"`
@@ -1848,7 +1848,7 @@ type SymbolFutures struct {
 type Symbols = []Symbol
 
 // Time Текущее время (UTC) в формате Unix time seconds
-type Time = int
+type Time = int64
 
 // Trade defines model for trade.
 type Trade struct {
@@ -2323,7 +2323,7 @@ type WsResBarsGetAndSubscribe struct {
 		Open *float64 `json:"open,omitempty"`
 
 		// Time Время (UTC) (Unix time seconds)
-		Time *int `json:"time,omitempty"`
+		Time *int64 `json:"time,omitempty"`
 
 		// Volume Объём
 		Volume *int `json:"volume,omitempty"`
@@ -2475,7 +2475,7 @@ type WsResQuotesSubscribe struct {
 		LastPrice *float64 `json:"last_price,omitempty"`
 
 		// LastPriceTimestamp Время последней цены (UTC)
-		LastPriceTimestamp *int `json:"last_price_timestamp,omitempty"`
+		LastPriceTimestamp *int64 `json:"last_price_timestamp,omitempty"`
 
 		// Lotsize Размер лота
 		Lotsize  *float64 `json:"lotsize,omitempty"`
@@ -2885,10 +2885,10 @@ type DevSecuritiesSearchAllTradesParams struct {
 	Format *DevSecuritiesSearchAllTradesParamsFormat `form:"format,omitempty" json:"format,omitempty"`
 
 	// From Начало отрезка времени (UTC) для фильтра результатов в формате Unix Time Seconds
-	From *int `form:"from,omitempty" json:"from,omitempty"`
+	From *int64 `form:"from,omitempty" json:"from,omitempty"`
 
 	// To Конец отрезка времени (UTC) для фильтра результатов в формате Unix Time Seconds
-	To *int `form:"to,omitempty" json:"to,omitempty"`
+	To *int64 `form:"to,omitempty" json:"to,omitempty"`
 
 	// Take Количество загружаемых элементов
 	Take *int `form:"take,omitempty" json:"take,omitempty"`
@@ -2999,10 +2999,10 @@ type DevHistoryParams struct {
 	Tf DevHistoryParamsTf `form:"tf" json:"tf"`
 
 	// From Начало отрезка времени (UTC) в формате Unix Time Seconds
-	From int32 `form:"from" json:"from"`
+	From int64 `form:"from" json:"from"`
 
 	// To Конец отрезка времени (UTC) в формате Unix Time Seconds
-	To int32 `form:"to" json:"to"`
+	To int64 `form:"to" json:"to"`
 
 	// Untraded Флаг для поиска данных по устаревшим или экспирированным инструментам. При использовании требуется точное совпадение тикера
 	Untraded *DevHistoryParamsUntraded `form:"untraded,omitempty" json:"untraded,omitempty"`
